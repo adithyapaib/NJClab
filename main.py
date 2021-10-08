@@ -1,4 +1,5 @@
 ## By Adithya Pai B Canara Engineering College Mangalore!
+# Test on and Working on Linux machine with Python 3.8.10 (default, Sep 28 2021, 16:10:42) 
 
 import sqlite3
 import sys
