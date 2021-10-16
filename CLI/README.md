@@ -4,7 +4,7 @@
 - Built with Python3, SQLite3
 ## Run it on terminal
 - `git clone https://github.com/adithyapaib/NJClab`
-- `cd adithyapaib/NJClab/CLI`
+- `cd NJClab/CLI`
 - `python main.py`
 or
 - `python3 main.py`
