@@ -22,7 +22,7 @@ NJC Lab's Movie Database submission
 - To run install nodejs on your pc from here [NodeJS](https://nodejs.org/en/download/)
  ## Run it on terminal
 - `git clone https://github.com/adithyapaib/NJClab`
-- `cd adithyapaib/NJClab/GUI`
+- `cd NJClab/GUI`
 - `npm i`
 - `npm start`
 or
