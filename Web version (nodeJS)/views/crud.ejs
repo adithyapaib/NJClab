@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=C, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAFZUlEQVRoge2ZW2wUZRTHf2e63Sa9mAJKsdtqhVgwxFAoaRfSSBqIPoDSlkvkUhQJxIQABeKL0aQP+kCMhAI+qClESyGBtlgFDdFY0CZFsCKEEG6p1V64BGzZLW2A3fl86Ba6y8zOzHZJMOH/NnPOd875z3f5f9838ARP8AT/a0i8Am2vaZgShNkieFFMRMgGUkPmPgX/CFxEaNF0fl5fXnY6HnlHRGBLdWNaUlJgDcgq4CWHzc8pRbU7KfDF2sWL+2KtISYClU1NrvTunnUoPgBGx5o8hJsK9dEtz+idlcXFAaeNHRPYsbduUlDX9gF5TttGhZJToC2pKJ9/wUkzRwS21dS/gUgtD8a2Idou93Dm1FWuXe0HICMjhbz8DHImjLJK4dc1bdmmpSXf2a3JNoGq2vpypWQX4Irm19LcwR8nrhja8gsy8RZlWaUKgKysWF66x05dmh2nbTX1b9gpvu1yj2nxAK0numlv67VK5wK1e9uehnl2arMkUFVb9yIie7AoHuDMqauWCU+3mhMcBhewb8feuklWjlEJVDY1uZTS9gNpdrJev3bb0mdoXthAalDXaiubmqJ+uKgE0rt71hHn1UacrXvTRnX2ro3mYErgk6+PpKB430m2sWOjLk4APJOR4iQkStSHW6obTUeAKYFEre9d4GknyfLyMyx9pk4f5yQkwBi3O7jazBhlCMkqp5lyJowivyDT1D7d6+H5F9KdhkUE01oMR+T2moYpuvCn40whtLf1crr1CtdCk3psRipTp4+LqfghiM7LG1aUnY18bzjDdVFzjLjZVdic8enkjLcu1pFii8wG7BEAKYx8Y6SwXZ0+ujp9dhV2RPGUMAOoioxjOAcEwgQkTgo7wnhqopGvIQEFYTMxFoXt7urkm7oDNNYf4EpXV5gtRsU27GKzVShs3Y1FYU8eb2FgoJ/+/n5O/NYSZotJsZXxbsDWZs4OHCqs43i6TpKRnxkB//CHWBS2wDuT5ORkklNSKPDOCLPFEi9gclYzXIUEuhWMGXrOy8+gq9MXNWGkwj7r8TB/wSJD31jiDQwYd7HZJD4//DneChtLPH+f8WAx7AGlOC5C2OfzFmUxLjM1bgrrNN6/N417wHgIJeg/oT/MON4KazcewPXrDoZQxdKFZzCQbTtoae7gh28v0dXhJ3AvSOBekK5OH4cbL3G8uTOWkPh8gt9nPIRMl1Gl2O00UbwVewh/tyeY2kwJBFTK58ANJ4nieCa+j7t3of0vc7kytby34rXbCvWxk2RxPhMDcP6ci0DAXCWjKvEtz+idgzdm8YMTxe7tEdrazIcPWN1KFBcHdLTFQHTVCSHOZ+K+308molR0J8u90Kby+Zd1TVsOWF68xvFMHFBKven3W3eXrc3c4F2lrMSCRJwUO6CEtzeWLzhspzbbu9HQXWUpERu9SHiLsphbkktWdhqJbo1Et4Yn+ynmleZSONNjlcanlCrZuKys1m5djjfBn37VkJuQwD5gmtO2FmgV0ZdsWLbw0tCLWaWH/CD3J5a4ktOOHigO+xni+Dyw+a2yi72eUYWipAK4OaKSB3FDUOsz3YHC4cUPQsKOcnqw/6GPZnlha4TQn5Sqz/bvr757x7VGhHeAyQ7DnEXYlZgY+NLsF5MIzUpx/ywsig3AL2E+Tos3w9a9dZMTgglzdFEzBXKB53jwI8QPdIBcEEWLiPy4fnnJOauYr5R8/6qIOhLxevOxg3O3xp3Ao8Ks0kO/ghSFv5WDooLb3f3uk3E7Ez8qiKZWAxE7QFWqRGu6kxIwOeY8Rjha//p5RJUBt4zsjz0BgGMN85pE072gmiNtj/0ciERoYi8CihCy/wPGeh0cfon3HAAAAABJRU5ErkJggg==" type="image/x-icon">
+    <title>CRUD Ops</title>
+    <link rel="stylesheet" href="sass/create.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+
+   
+</head>
+<body>
+    <span id="d"></span>
+    <span id="e"></span>
+   <div class="container2">
+   <span> <h3>Row Operations <i class="fa fa-database" aria-hidden="true"></i></h3> </span>
+    <section class="sec">
+    <button class="btn insert">Insert Data <i class="fa fa-plus-square green" aria-hidden="true"></i> </button>
+    <button class="btn print">Display Data <i class="fa fa-desktop" aria-hidden="true"></i> </button>
+    <button class="btn delete">Delete Movie <i class="fa fa-trash red" aria-hidden="true"></i> </button>
+    <button class="btn deleteAll btn-red">Delete All <i class="fa fa-trash black" aria-hidden="true"></i> </button>
+    <button class="btn create">Table Menu <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> </button>
+</section>
+<section class="sec">
+    <button class="btn rating">Sortby Rating <i class="fa fa-star gold" aria-hidden="true"></i> </button>
+    <button class="btn year">Sortby year <i class="fa fa-calendar" aria-hidden="true"></i> </button>
+    <button class="btn actor ">Sortby actor <i class="fa fa-male gold" aria-hidden="true"></i> </button>
+    <button class="btn actress">Sortby actress <i class="fa fa-female pink" aria-hidden="true"></i> </button>
+    <button class="btn director">Sortby director <i class="fa fa-film blue" aria-hidden="true"></i> </button>
+    <button class="btn insertRandom">Insert Random <i class="fa fa-plus green" aria-hidden="true"></i> </button>
+</section>
+   </div>
+  </body>
+<script>
+    let insert = document.querySelector('.insert');
+    insert.addEventListener('click',()=>{
+        window.location.href = '/insert';
+    })
+    let print = document.querySelector('.print');
+    print.addEventListener('click',()=>{
+        window.location.href = '/print';
+    })
+    let create = document.querySelector('.create');
+    create.addEventListener('click',()=>{
+        window.location.href = '/create';
+    })
+    let rating = document.querySelector('.rating');
+    rating.addEventListener('click',()=>{
+        window.location.href = '/rating';
+    })
+    let year = document.querySelector('.year');
+    year.addEventListener('click',()=>{
+        window.location.href = '/year';
+    })   
+    let de = document.querySelector('.delete');
+    de.addEventListener('click',()=>{
+        window.location.href = '/delete';
+    })
+
+    let deAll = document.querySelector('.deleteAll');
+    deAll.addEventListener('click',()=>{
+        window.location.href = '/deleteAll';
+    })
+    let actor = document.querySelector('.actor');
+    actor.addEventListener('click',()=>{
+        window.location.href = '/actor';
+    })  
+    let actress = document.querySelector('.actress');
+    actress.addEventListener('click',()=>{
+        window.location.href = '/actress';
+    })
+    let director = document.querySelector('.director');
+    director.addEventListener('click',()=>{
+        window.location.href = '/director';
+    })
+    let insertRandom = document.querySelector('.insertRandom');
+    insertRandom.addEventListener('click',()=>{
+        window.location.href = '/insertRandom';
+    })
+
+</script>
+</html>

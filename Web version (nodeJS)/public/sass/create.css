@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap");
+* {
+  cursor: url("https://cdn.custom-cursor.com/db/5644/32/rick-and-morty-talking-cat-cursor.png"), auto;
+}
+
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif !important;
+  background: #FFEDDA !important;
+}
+
+#c {
+  position: absolute;
+  top: 0;
+  background: #FFB830 !important;
+  left: 0;
+  width: 50vh;
+  height: 50vh;
+  -webkit-transform: translateX(-10em) translateY(-10em);
+          transform: translateX(-10em) translateY(-10em);
+  -webkit-box-shadow: 10px 10px 10px #00000013 ,inset -10px -10px 10px #00000013;
+          box-shadow: 10px 10px 10px #00000013 ,inset -10px -10px 10px #00000013;
+  border-radius: 50%;
+  background: red;
+  z-index: 2000;
+}
+
+.container {
+  z-index: 20000;
+  position: absolute;
+  bottom: 0;
+  background: #FF2442;
+  color: #FFEDDA !important;
+  border-radius: 200em 200em 0px 0px;
+  width: 60vw;
+  height: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5em;
+  margin-top: 50px;
+  -webkit-box-shadow: 10px -10px 20px #11000033, inset -10px 10px 20px #11000033;
+          box-shadow: 10px -10px 20px #11000033, inset -10px 10px 20px #11000033;
+}
+
+.container span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+.container section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.btn {
+  text-align: center;
+  background: #1d1d1d !important;
+  color: #E8E8E8 !important;
+  font: 1em 'Poppins', sans-serif !important;
+  border: none !important;
+  border-radius: 200em 200em 0px 0px;
+  padding: 0.5em 1.5em !important;
+}
+
+/** CRUD PAGE **/
+.container2 {
+  z-index: 20000;
+  position: absolute;
+  bottom: 0;
+  background: #297F87;
+  color: #FFF7AE !important;
+  border-radius: 20em 20em 0px 0px;
+  width: 95vw;
+  height: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5em;
+  margin-top: 50px;
+  -webkit-box-shadow: 10px -10px 20px #11000033, inset -10px 10px 20px #11000033;
+          box-shadow: 10px -10px 20px #11000033, inset -10px 10px 20px #11000033;
+}
+
+.container2 span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+.container2 section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#d {
+  position: absolute;
+  top: 0;
+  background: #DF2E2E !important;
+  left: 0;
+  width: 40vw;
+  height: 20vh;
+  -webkit-box-shadow: 10px 10px 10px #00000013 ,inset -10px -10px 10px #00000013;
+          box-shadow: 10px 10px 10px #00000013 ,inset -10px -10px 10px #00000013;
+  border-radius: 0px 0em 08em 0em;
+  background: red;
+  z-index: 2000;
+}
+
+#e {
+  position: absolute;
+  top: 0;
+  background: #1A1A2E !important;
+  right: 0;
+  width: 20vw;
+  height: 40vh;
+  -webkit-box-shadow: 10px 10px 10px #00000013 ,inset 10px 10px 10px #00000013;
+          box-shadow: 10px 10px 10px #00000013 ,inset 10px 10px 10px #00000013;
+  border-radius: 0em 0em 0em 8em;
+  background: red;
+  z-index: 2000;
+}
+
+.red {
+  color: red !important;
+}
+
+.green {
+  color: greenyellow !important;
+}
+
+.gold {
+  color: gold !important;
+}
+
+.black {
+  color: white !important;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.pink {
+  color: pink !important;
+}
+
+.btn-red {
+  background: red !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.container2 .sec {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container2 .sec .btn {
+  margin: 0.5em !important;
+}
+/*# sourceMappingURL=create.css.map */

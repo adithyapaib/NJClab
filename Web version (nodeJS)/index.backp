@@ -1,0 +1,69 @@
+/* Dependencies */
+const express = require("express");
+const pasrser = require("body-parser");
+const app = express();
+const axios = require("axios").default;
+var sqlite3 = require("sqlite3").verbose();
+
+/* Middlewares */
+app.use(express.json());
+app.use(pasrser.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(express.static(__dirname + "/public"));
+
+/* Create Database Con */
+let db = new sqlite3.Database("./movie.db", (err) => {if (err) return console.log("Error when creating the database", err); console.log("Database Connected!");});
+app.get("/", (req, res) => res.render("index"));
+app.get("/insert", (req, res) => res.render("insert"));
+app.get("/crud", (req, res) => res.render("crud"));
+app.get("/insert10", (req, res) => res.render("insert10")); 
+
+/* Create */
+app.get("/create", (req, res) => db.run("SELECT name FROM sqlite_master WHERE type='table' AND name='table_name';",(err, row) => {if (err) {res.render("create", {table: false,});} else {res.render("create", {table: true,});}}));
+app.post("/create", async (req, res) => {
+  let check = await req.body.check, drop = await req.body.drop, create = await req.body.create;
+  if (check)
+    db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='database'",(err, row) => {if (err) res.render("create", { check: err });else if (row)res.render("create", { check: "Table movie.db Exists", table: true });else res.render("create", { check: "Table does not exist" });});
+    else if (drop)
+      db.run("DROP TABLE database", (err) => {if (err) {res.render("create", { drop: err["message"] });} else res.render("create", { drop: "Table Dropped" });});
+        else if (create) 
+          db.run("CREATE TABLE IF NOT EXISTS database(movie VARCHAR(50),actor VARCHAR(20), actress VARCHAR(20), director VARCHAR(20),year INT, rating INT, trailor VARCHAR(100) );",(err) => {if (err) {res.render("create", { create: err["message"] });} else res.render("create", { create: "Table Created" });});
+});
+
+app.post("/insert", async (req, res) => {
+  let  movie = await req.body.movie, actor = await req.body.actor, actress = await req.body.actress, director = await req.body.director, year = await req.body.year, rating = await req.body.rating, trailer = `https://www.youtube.com/results?search_query=${movie.replace(" ","+")}+trailer`;
+  try {await db.run("INSERT INTO database VALUES('" +movie +"','" +actor +"','" +actress +"','" +director +"','" +year +"','" +rating +"', '" +trailer +"');");console.log("Inserted");} 
+  catch (err) {console.log(err);res.render("insert", { error: err });}
+  res.render("insert", { success: "Inserted" });
+});
+
+app.post("/insert10",async(req,res )=>{
+  let movie = ["Interstellar", "Avengers", "Uri", "Doctor Strange", "Black Panther", "Harry Potter and the Prisoner of Azkaban", "Aquaman", "Inception", "Dunkrik", "Tenet"];
+  let actor = ["Matthew McConaughey", "Robert Downey Jr.","Vickey Koshal","Benedict Cumberbatch ", "Chadwick Boseman", "Daniel Radcliffe", "Jason Momoa", "Leonardo DiCaprio", "Tom Holland", "Robert Pattinson"];
+  let actress = ["Ellen Page", "Cate Blanchett", "Yamini Gautham", "Rachel McAdams", "Lupita Nyong'o", "Emma Watson", "Jenny", "Natasha", "Willams Holland", "Jenny Black"];
+  let director = ["Christopher Nolan", "Steven Spielberg", "James Cameron", "Christopher Nolan", "Ryan Coogler", "James Wan", "Christopher Nolan", "Christopher Nolan", "James Wan", "Christopher Nolan"];
+  let year = [2014, 2012, 2019, 2016, 2019, 2006, 2011, 2013, 2020, 2021];
+  let rating = [9, 8, 9, 8, 7, 6, 7, 8, 8, 9],i;
+  let trailer = ["https://www.youtube.com/results?search_query=Interstellar+trailer", "https://www.youtube.com/results?search_query=Avengers+trailer", "https://www.youtube.com/results?search_query=Uri+trailer", "https://www.youtube.com/results?search_query=Doctor+Strange+trailer", "https://www.youtube.com/results?search_query=Black+Panther+trailer", "https://www.youtube.com/results?search_query=Harry+Potter+and+the+Prisoner+of+Azkaban+trailer", "https://www.youtube.com/results?search_query=Aquaman+trailer", "https://www.youtube.com/results?search_query=Inception+trailer", "https://www.youtube.com/results?search_query=Dunkrik+trailer", "https://www.youtube.com/results?search_query=Tenet+trailer"];
+  for(i=0;i<5;i++){try {await db.run("INSERT INTO database VALUES('" +movie[i] +"','" +actor[i] +"','" +actress[i] +"','" +director[i] +"','" +year[i] +"','" +rating[i] +"', '" +trailer[i] +"');");console.log("Inserted");}catch (err) {console.log(err);res.render("insert10", { error: err });}}res.render("insert10", { success: "Inserted" });
+});
+
+app.get("/print", async (req, res) => {let data = [];try {await db.all("SELECT * FROM database", function (err, rows) {rows.forEach(function (row) {data.push(row);});console.log("Hello" + data);res.render("print", { data });});}catch (err) {console.log("Get Print error" + err);}});
+
+app.get("/year", (req, res) => res.render("year"));
+app.post("/year", async (req, res) => {let year = await req.body.year,data = [];try {await db.all("SELECT * FROM database WHERE year = '" + year + "'",function (err, rows) {rows.forEach(function (row) {data.push(row);});console.log(data);res.render("year", { data });});}catch (err) {console.log(err);}});
+
+app.get("/rating", (req, res) => res.render("rating"));
+app.post("/rating", async (req, res) => {let rating = await req.body.rating;console.log(rating);let data = [];try {await db.all("SELECT * FROM database WHERE rating = '" + rating + "'",function (err, rows) {rows.forEach(function (row) {data.push(row);});console.log(data);res.render("rating", { data }); });} catch (err) {console.log(err);}});
+
+app.get("/delete", (req, res) => res.render("delete"));
+app.post("/delete", async (req, res) => {let movie = await req.body.movie,  data = [];try {await db.all("SELECT * FROM database WHERE movie = '" + movie + "'",function (err, rows) {rows.forEach(function (row) {data.push(row);});if (data.length == 0)res.render("delete", { error: "Movie not found" });else {db.run("DELETE FROM database WHERE movie = '" + movie + "'",function (err) {if (err) res.render("delete", { error: err });else res.render("delete", { success: "Deleted" });});}});} catch (err) {console.log(err);res.render("delete", { error: err });}});
+
+app.get("/deleteAll", (req, res) => res.render("deleteAll"));
+app.post("/deleteAll", async (req, res) => {db.run("DELETE FROM database", function (err) {if (err) res.render("deleteAll", { error: err });else res.render("deleteAll", { success: "Deleted" });});});
+
+
+const key = "aeba4c51843f8a4cdc04a74b1486d964";
+app.get("/:id", async (req, res) => {let id = await req.params.id, data =[];id = decodeURIComponent(JSON.stringify(id));try {await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${id}`).then((response) => {if(response["data"]["results"][0]){data = response["data"]["results"][0];data["poster_path"] = `https://image.tmdb.org/t/p/original${data["poster_path"]}`;let id = data["id"]; console.log(data);res.render("movie", { data });res.end();}});} catch (err) {console.log("ID error" + err);res.render("movie", { error: err });res.end();}});
+app.listen(3000, () => console.log("Server started at port 3000"))
