@@ -5,7 +5,7 @@ NJC Lab's Movie Database submission
   
   
 
-#### I Have made 2 Version of the given problem
+#### I Have made 2 Version for the given problem
 
 - [NodeJS (Web Version)](https://github.com/adithyapaib/NJClab/tree/main/GUI)
 
